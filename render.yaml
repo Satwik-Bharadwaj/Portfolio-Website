@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: portfolio-website
+    env: python
+    buildCommand: pip install -r requirements.txt && python -m django collectstatic --no-input --settings=portfolio.settings --pythonpath=portfolio
+    startCommand: gunicorn portfolio.wsgi:application --chdir portfolio
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.5
+      - key: DEBUG
+        value: "false"
