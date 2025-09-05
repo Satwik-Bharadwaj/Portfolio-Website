@@ -148,6 +148,9 @@ h4 {
     gap: 12px;
     width: 50%;
 }
+.skillss-container {
+    width: 100%;
+}
 .skillss-container .bar {
     width: 100%;
     min-width: 0;
@@ -227,6 +230,10 @@ h4 {
 
 .bar {
     margin: .75rem 0;
+    display: block;
+    height: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .bar-content {
