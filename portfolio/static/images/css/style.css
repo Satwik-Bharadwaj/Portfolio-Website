@@ -146,7 +146,7 @@ h4 {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    width: 50%;
+    width: 100%;
 }
 .skillss-container {
     width: 100%;
@@ -157,75 +157,48 @@ h4 {
     margin-bottom: 8px;
 }
 .java {
-    width: 90%;
-    height: 1rem;
-    background-color: #e54c21;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 90%;
+    --bar-color: #e54c21;
 }
 
 .html {
-    width: 90%;
-    height: 1rem;
-    background-color:  #00a0e4;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 85%;
+    --bar-color: #00a0e4;
 }
 
 .css {
-    width: 80%;
-    height: 1rem;
-    background-color:yellow;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 75%;
+    --bar-color: yellow;
 }
 
 .js {
-    width: 65%;
-    height: 1rem;
-    background-color:red;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 70%;
+    --bar-color: red;
 }
 
 .python {
-    width: 50%;
-    height: 1rem;
-    background-color: #7952b3;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 50%;
+    --bar-color: #7952b3;
 }
 
 .mysql {
-    width: 30%;
-    height: 1rem;
-    background-color: #61dafb;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 50%;
+    --bar-color: #61dafb;
 }
 
 .flask {
-    width: 40%;
-    height: 1rem;
-    background-color: #000000;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 60%;
+    --bar-color: #000000;
 }
 
 .frontend {
-    width: 70%;
-    height: 1rem;
-    background-color: #f0db4f;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 60%;
+    --bar-color: #f0db4f;
 }
 
 .learning {
-    width: 100%;
-    height: 1rem;
-    background-color: #61dbfb;
-    margin: 1rem 0;
-    border-radius: 12px;
+    --pct: 100%;
+    --bar-color: #61dbfb;
 }
 
 .bar {
@@ -234,6 +207,19 @@ h4 {
     height: 1rem;
     border-radius: 12px;
     overflow: hidden;
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        var(--bar-color, #61dafb) 0%,
+        var(--bar-color, #61dafb) var(--pct, 0%),
+        rgba(255, 255, 255, 0.2) var(--pct, 0%),
+        rgba(255, 255, 255, 0.2) 100%
+    );
+}
+
+/* Hide duplicate skills image column */
+@media (min-width: 0px) {
+    .skills-left { display: none; }
 }
 
 .bar-content {
